@@ -1,5 +1,4 @@
 
-web/nbproject/private/private.properties
-web/nbproject/private/private.xml
-web/nbproject/project.xml
-web/nbproject/project.properties
+/nbproject/private/
+nbproject/project.properties
+nbproject/project.xml

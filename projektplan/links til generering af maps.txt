@@ -1,7 +1,18 @@
+Google My Maps:
+
 https://www.google.com/maps/d/u/0/
+
+
+
+Links til GPX-generators:
+
 https://www.scribblemaps.com/
 https://www.maps.ie/map-my-route/
 https://www.gpxgenerator.com/
 
+
+
 Potentially relevant:
+
 https://support.google.com/maps/forum/AAAAQuUrST82_wzIW98tEw/?hl=da
+https://wiki.openstreetmap.org/wiki/Track_drawing_websites

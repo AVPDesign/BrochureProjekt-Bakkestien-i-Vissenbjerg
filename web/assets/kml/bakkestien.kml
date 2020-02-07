@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>Bakkestien</name>
-    <description>GPX-fil genereret tegnet i hånden med: https://www.bikemap.net/</description>
+    <description>KML-fil genereret håndtegnet med: https://www.bikemap.net/</description>
     <Style id="icon-123-normal">
       <IconStyle>
         <scale>1.1</scale>

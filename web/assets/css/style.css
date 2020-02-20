@@ -1,13 +1,15 @@
-/* Global */
+/* GLOBAL */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 *{
     margin:0;
     padding:0;
     font-family: Roboto, open-sans;
 }
-/* mobile */
-
+.row{
+    width:100%;
+    display:block;
+}
+/* MOBILE */
 /* Header */
 header{
     background:#C8102E;
@@ -25,7 +27,6 @@ header .logo{
     /*placeholder logo*/
     position:relative;
 }
-
 /* navigation */
 #mobileNavOverlay{
     display:block;
@@ -62,11 +63,9 @@ header .logo svg{
     left: 5px;
     height:2.5em;
 }
-
 header nav{
     margin:auto 0;
 }
-
 header nav em{
     color:white;
     font-size:2em;

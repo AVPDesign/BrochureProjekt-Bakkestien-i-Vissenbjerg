@@ -1,16 +1,20 @@
 /* Global */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 *{
     margin:0;
     padding:0;
+    font-family: Roboto, open-sans;
 }
 /* mobile */
+
+/* Header */
 header{
     background:#C8102E;
     display:flex;
     justify-content:space-between;
     padding:12px;
 }
-
 header .logo{
     background:white;
     color:#C8102E;
@@ -22,19 +26,42 @@ header .logo{
     position:relative;
 }
 
+/* navigation */
+#mobileNavOverlay{
+    display:block;
+    top:0;
+    left:0;
+    height:calc(100vh - 74px);
+    width:0;
+    background:rgba(200, 16, 46, .7);
+    transition:all 350ms;
+
+}
+#mobileNavLinks{
+    display:none;
+    text-align:center;
+    list-style-type:none;
+    padding-top:25px;
+}
+#mobileNavLinks li{
+    margin: 15px;
+}
+#mobileNavLinks a{
+    color:white;
+    text-decoration:none;
+    font-size:1.5em;
+}
+
 
 /*------- placeholder logo -------*/
 header .logo a{
     color:#C8102E;
 }
-header .logo em{
+header .logo svg{
     position:absolute;
     top: 5px;
     left: 5px;
-    font-size:1.5em;
-    border:3px solid #C8102E;
-    padding:5px;
-    border-radius:50%;
+    height:2.5em;
 }
 
 header nav{

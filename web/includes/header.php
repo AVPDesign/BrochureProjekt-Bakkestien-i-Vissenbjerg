@@ -7,10 +7,15 @@
         <!-- material design icons -->
         <link rel="stylesheet" href="//cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
         
+        <!-- google maps -->
+        <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1k5SC29hxlgaYFAVTeKx9yS7iPNUjUTI&callback=initMap"></script>-->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+        
         <!-- custom -->
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
         <script src="assets/js/script.js" async defer></script>
     </head>
+    
     <body>
         <header>
             <div class="logo">
@@ -22,7 +27,7 @@
             </div>
 
             <nav>
-                <svg style="width:2.2em;" viewBox="0 0 24 24" onclick="toggleMobileNav()">
+                <svg style="width:2.2em;" viewBox="0 0 24 24" onclick="setTimeout(toggleMobileNav, 1)">
                 <path fill="white" id="mobileNavMenuPath" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/>
                 </svg>
             </nav>

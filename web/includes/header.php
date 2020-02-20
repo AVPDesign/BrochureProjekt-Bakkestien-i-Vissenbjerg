@@ -30,5 +30,10 @@
 
         <!-- mobile nav -->
         <div id="mobileNavOverlay">
-
+            <ul id="mobileNavLinks">
+                <li><a href="#">NavLink 1</a></li>
+                <li><a href="#">NavLink 2</a></li>
+                <li><a href="#">NavLink 3</a></li>
+                <li><a href="#">NavLink 4</a></li>
+            </ul>
         </div>

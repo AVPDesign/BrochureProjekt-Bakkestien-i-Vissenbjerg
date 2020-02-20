@@ -35,7 +35,6 @@ header .logo{
     width:0;
     background:rgba(200, 16, 46, .7);
     transition:all 350ms;
-
 }
 #mobileNavLinks{
     display:none;

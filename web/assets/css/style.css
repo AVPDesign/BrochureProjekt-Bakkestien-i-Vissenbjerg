@@ -4,13 +4,14 @@
     padding:0;
 }
 /* mobile */
+
+/* Header */
 header{
     background:#C8102E;
     display:flex;
     justify-content:space-between;
     padding:12px;
 }
-
 header .logo{
     background:white;
     color:#C8102E;
@@ -22,19 +23,30 @@ header .logo{
     position:relative;
 }
 
+/* navigation */
+#mobileNavMenuPath{
+    d: path('M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z');
+}
+#mobileNavOverlay{
+    display:block;
+    top:0;
+    left:0;
+    height:calc(100vh - 74px);
+    width:0;
+    background:rgba(200, 16, 46, .7);
+    transition:all 350ms;
+}
+
 
 /*------- placeholder logo -------*/
 header .logo a{
     color:#C8102E;
 }
-header .logo em{
+header .logo svg{
     position:absolute;
     top: 5px;
     left: 5px;
-    font-size:1.5em;
-    border:3px solid #C8102E;
-    padding:5px;
-    border-radius:50%;
+    height:2.5em;
 }
 
 header nav{

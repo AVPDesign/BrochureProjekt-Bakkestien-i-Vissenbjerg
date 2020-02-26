@@ -15,13 +15,14 @@ function debounce(func, wait, immediate) {
         if (callNow)
             func.apply(context, args);
     };
-};
+}
+;
 
 // Toggle mobile nav
 var toggle = false;
 
 //function toggleMobileNav() {
-var toggleMobileNav = debounce(function(){
+var toggleMobileNav = debounce(function () {
     var mobileNavMenuPath = document.getElementById("mobileNavMenuPath");
     var mobileNavOverlay = document.getElementById("mobileNavOverlay");
     var mobileNavLinks = document.getElementById("mobileNavLinks");
@@ -63,5 +64,22 @@ function initMap() {
         preserveViewport: false,
         map: map
     });
-}
-;
+};
+
+
+
+// Detect scroll direction
+scrollPos = (document.body.getBoundingClientRect()).top;
+
+window.addEventListener('scroll', function () {
+    // detects new state and compares it with the new one
+    if ((document.body.getBoundingClientRect()).top > scrollPos){
+        // Up
+        console.log("UP");
+    }else{
+        // Down
+        console.log("DOWN");
+    }
+    // saves the new position for iteration.
+    scrollPos = (document.body.getBoundingClientRect()).top;
+});

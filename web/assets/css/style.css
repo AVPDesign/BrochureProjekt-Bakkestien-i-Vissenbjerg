@@ -1,9 +1,20 @@
 /* GLOBAL */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body, html{
+    font-size:16px;
+}
 *{
     margin:0;
     padding:0;
     font-family: Roboto, open-sans;
+}
+p, span{
+    margin:8px 0;
+    line-height:1.5em;
+}
+hr{
+    border: .8px solid #C8102E;
+    background: #C8102E;
 }
 main{
     padding:0px 12px;
@@ -15,12 +26,23 @@ main{
 }
 .col-1{
     width:100%;
+    margin:0px 6px;
 }
 .col-2{
     width:50%;
+    margin:0px 6px;
 }
 .col-3{
     width:33%;
+    margin:0px 6px;
+}
+.m-x{
+    margin: auto !important;
+}
+.flex-c{
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 .flex-a{
     display:flex;
@@ -31,6 +53,17 @@ main{
     justify-content: space-between;
 }
 /* MOBILE */
+@media screen and (max-width: 578px) {
+    h1{
+        font-size:1.4em;
+    }
+    h2{
+        font-size:1.3em;
+    }
+    h3{
+        font-size:1.2em;
+    }
+}
 /* Header */
 header{
     background:#C8102E;
@@ -102,4 +135,40 @@ header nav em{
 #map{
     height:250px;
     width:100%;
+}
+.redBox{
+    background: #C8102E;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    text-decoration:none;
+}
+.redBox svg{
+    margin:0 6px;
+}
+.info-container{
+    display:flex;
+    align-items:center;
+    text-align:center;
+    margin:0 12px;
+}
+
+/* Socials */
+.btn-fb{
+    background:#3b5a9b;
+    color:white;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    padding:8px 12px;
+}
+.btn-twitter{
+    background:#00abf4;
+    color:white;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    padding:8px 12px;
 }

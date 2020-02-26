@@ -6,6 +6,8 @@
 
         <!-- material design icons -->
         <link rel="stylesheet" href="//cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
+        <!-- font awesome -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" async defer></script>
         
         <!-- google maps -->
         <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1k5SC29hxlgaYFAVTeKx9yS7iPNUjUTI&callback=initMap"></script>-->

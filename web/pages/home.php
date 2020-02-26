@@ -58,7 +58,7 @@
             <div class="info-container">
                 <i class="fas fa-wheelchair" style="font-size:38px;margin-left:3px;"></i></td>
                 <!--<svg style="width:38px;height:38px;color:red;" viewBox="0 0 24 24"><path fill="currentColor" d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>-->
-                <img src="assets/icons/nope.svg" alt="negative" class="icon"/>
+                <svg style="height:33px;" viewBox="0 0 202 202"><defs><style>.cls-1,.cls-3{fill:#fff;}.cls-2{fill:red;}.cls-3,.cls-4{stroke:red;stroke-miterlimit:10;stroke-width:18px;}.cls-4{fill:none;}</style></defs><title>nope</title><circle class="cls-1" cx="101" cy="101" r="92"/><path class="cls-2" d="M340,143a83,83,0,1,1-83,83,83.09,83.09,0,0,1,83-83m0-18A101,101,0,1,0,441,226,101,101,0,0,0,340,125Z" transform="translate(-239 -125)"/><path class="cls-3" d="M340,226" transform="translate(-239 -125)"/><line class="cls-4" x1="168" y1="168" x2="33.5" y2="33.5"/><line class="cls-4" x1="34" y1="168" x2="167" y2="35"/></svg>
             </div>
         </div>
     </div>

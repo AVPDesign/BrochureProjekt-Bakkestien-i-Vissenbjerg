@@ -13,8 +13,11 @@ p, span{
     line-height:1.5em;
 }
 hr{
-    border: .8px solid #C8102E;
-    background: #C8102E;
+    color:#C8102E;
+    border: 0;
+    height: .1em;
+    margin:14px 0;
+    background: -webkit-linear-gradient(left, hsla(350, 85%, 42%,0) 0%, hsla(350, 85%, 42%,.75) 50%, hsla(350, 85%, 42%,0) 100%);
 }
 main{
     padding:0px 12px;
@@ -133,7 +136,7 @@ header nav em{
 
 /* Home */
 #map{
-    height:250px;
+    height:300px;
     width:100%;
 }
 .redBox{

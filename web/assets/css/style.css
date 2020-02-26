@@ -1,13 +1,36 @@
-/* Global */
+/* GLOBAL */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 *{
     margin:0;
     padding:0;
     font-family: Roboto, open-sans;
 }
-/* mobile */
-
+main{
+    padding:0px 12px;
+}
+.row{
+    width:100%;
+    display:flex;
+    padding:8px 0px;
+}
+.col-1{
+    width:100%;
+}
+.col-2{
+    width:50%;
+}
+.col-3{
+    width:33%;
+}
+.flex-a{
+    display:flex;
+    justify-content: space-around;
+}
+.flex-b{
+    display:flex;
+    justify-content: space-between;
+}
+/* MOBILE */
 /* Header */
 header{
     background:#C8102E;
@@ -21,37 +44,40 @@ header .logo{
     border-radius:50%;
     height:50px;
     width:50px;
-    
+
     /*placeholder logo*/
     position:relative;
 }
-
 /* navigation */
 #mobileNavOverlay{
-    display:block;
-    top:0;
-    left:0;
+    display:none;
+    position:fixed;
+    top:74px;
+    right:0;
     height:calc(100vh - 74px);
     width:0;
-    background:rgba(200, 16, 46, .7);
+    background:rgba(200, 16, 46, .95);
     transition:all 350ms;
-
+    z-index:99;
 }
 #mobileNavLinks{
     display:none;
-    text-align:center;
     list-style-type:none;
-    padding-top:25px;
+    padding:2rem;
 }
 #mobileNavLinks li{
-    margin: 15px;
+    padding: 1rem 0;
+    border-top: 1px solid #FFF;
+}
+#mobileNavLinks li:last-of-type{
+    border-bottom: 1px solid #FFF;
 }
 #mobileNavLinks a{
     color:white;
     text-decoration:none;
-    font-size:1.5em;
+    font-size:1.2em;
+    font-weight:700;
 }
-
 
 /*------- placeholder logo -------*/
 header .logo a{
@@ -63,12 +89,17 @@ header .logo svg{
     left: 5px;
     height:2.5em;
 }
-
 header nav{
     margin:auto 0;
 }
-
 header nav em{
     color:white;
     font-size:2em;
+}
+/*------- /placeholder logo -------*/
+
+/* Home */
+#map{
+    height:250px;
+    width:100%;
 }

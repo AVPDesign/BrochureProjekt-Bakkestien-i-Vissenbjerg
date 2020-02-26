@@ -15,7 +15,7 @@
 
     <div class="row">
         <div class="col-1 redBox">
-            3,5 km Vissenbjerg
+            <span>3,5 km Vissenbjerg</span>
         </div>
     </div>
 

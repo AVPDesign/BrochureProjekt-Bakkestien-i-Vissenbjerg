@@ -139,6 +139,9 @@ header nav em{
     color:white;
     font-size:2em;
 }
+header nav svg:hover{
+    cursor:pointer;
+}
 /*------- /placeholder logo -------*/
 
 /* Home */

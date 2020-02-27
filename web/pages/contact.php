@@ -1,3 +1,3 @@
 <main>
-    Forside
+    Kontakt
 </main>

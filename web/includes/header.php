@@ -15,7 +15,7 @@
         
         <!-- custom -->
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
-        <script src="assets/js/script.js" async defer></script>
+        <script src="assets/js/script.js" defer></script>
     </head>
     
     <body>
@@ -38,9 +38,9 @@
         <!-- mobile nav -->
         <div id="mobileNavOverlay">
             <ul id="mobileNavLinks">
-                <li><a href="#">NavLink 1</a></li>
-                <li><a href="#">NavLink 2</a></li>
-                <li><a href="#">NavLink 3</a></li>
-                <li><a href="#">NavLink 4</a></li>
+                <li><a href="index.php">Forside</a></li>
+                <li><a href="index.php?page=routes">Find hjertesti</a></li>
+                <li><a href="index.php?page=about">Om os</a></li>
+                <li><a href="index.php?page=contact">Kontakt</a></li>
             </ul>
         </div>

@@ -66,7 +66,52 @@ function initMap() {
         preserveViewport: false,
         map: map
     });
-};
+
+    infoWindow = new google.maps.InfoWindow;
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+
+            // Get user current position
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title: 'Din placering'
+            });
+
+            var infoWindow = new google.maps.InfoWindow({
+                content: 'Din placering'
+            });
+
+            // Update user position
+            setInterval(function () {
+                var newPosition = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                marker.setPosition(newPosition);
+            }, 5000);
+
+            // Set marker infoWindow content
+            marker.addListener('click', function () {
+                infoWindow.open(map, marker);
+            });
+
+        }, function () {
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
+}
+;
 
 
 
@@ -79,12 +124,11 @@ var scrollPos = (document.body.getBoundingClientRect()).top;
 
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function fixHeader() {
-    console.log("top: " + top);
-  if (window.pageYOffset > scrollPos) {
-    header.classList.add("fixed");
-  } else {
-    header.classList.remove("fixed");
-  }
+    if (window.pageYOffset > scrollPos) {
+        header.classList.add("fixed");
+    } else {
+        header.classList.remove("fixed");
+    }
 }
 
 // Detect scroll direction
@@ -92,10 +136,10 @@ scrollPos = (document.body.getBoundingClientRect()).top;
 
 window.addEventListener('scroll', function () {
     // detects new state and compares it with the new one
-    if ((document.body.getBoundingClientRect()).top > scrollPos){
+    if ((document.body.getBoundingClientRect()).top > scrollPos) {
         // Up
         header.style.top = "0";
-    }else{
+    } else {
         // Down
         header.style.top = "-75px";
     }

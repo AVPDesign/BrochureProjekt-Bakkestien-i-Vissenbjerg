@@ -15,18 +15,20 @@ function debounce(func, wait, immediate) {
         if (callNow)
             func.apply(context, args);
     };
-};
+}
+;
 
 // Toggle mobile nav
 var toggle = false;
 
 //function toggleMobileNav() {
-var toggleMobileNav = debounce(function(){
+var toggleMobileNav = debounce(function () {
     var mobileNavMenuPath = document.getElementById("mobileNavMenuPath");
     var mobileNavOverlay = document.getElementById("mobileNavOverlay");
     var mobileNavLinks = document.getElementById("mobileNavLinks");
 
     if (toggle == false) {
+        document.body.style.overflowY = "hidden";
         mobileNavOverlay.style.display = "block";
 
         setTimeout(function () {
@@ -37,6 +39,7 @@ var toggleMobileNav = debounce(function(){
         mobileNavLinks.style.display = "block";
         toggle = true;
     } else {
+        document.body.style.overflowY = "scroll";
         mobileNavOverlay.style.width = "0";
 
         setTimeout(function () {
@@ -63,5 +66,86 @@ function initMap() {
         preserveViewport: false,
         map: map
     });
+
+    var infoWindow = new google.maps.InfoWindow;
+
+    // Try HTML5 Geolocation
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+
+            // Get user current position
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title: 'Din placering'
+            });
+
+            var infoWindow = new google.maps.InfoWindow({
+                content: 'Din placering'
+            });
+
+            // Update user position every 5 seconds
+            setInterval(function () {
+                var newPosition = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                marker.setPosition(newPosition);
+            }, 5000);
+
+            // Set marker infoWindow content
+            marker.addListener('click', function () {
+                infoWindow.open(map, marker);
+            });
+
+        }, function () {
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
 }
 ;
+
+
+
+// Toggle fixed header
+var header = document.getElementById("header");
+
+// Get the offset position of the navbar
+var top = header.OffsetTop;
+var scrollPos = (document.body.getBoundingClientRect()).top;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function fixHeader() {
+    if (window.pageYOffset > scrollPos) {
+        header.classList.add("fixed");
+    } else {
+        header.classList.remove("fixed");
+    }
+}
+
+// Detect scroll direction
+scrollPos = (document.body.getBoundingClientRect()).top;
+
+window.addEventListener('scroll', function () {
+    // detects new state and compares it with the new one
+    if ((document.body.getBoundingClientRect()).top > scrollPos) {
+        // Up
+        header.style.top = "0";
+    } else {
+        // Down
+        header.style.top = "-75px";
+    }
+    // saves the new position for iteration.
+    scrollPos = (document.body.getBoundingClientRect()).top;
+});
+
+// When the user scrolls the page, execute myFunction
+window.addEventListener('scroll', fixHeader);

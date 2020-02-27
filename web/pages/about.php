@@ -1,3 +1,3 @@
 <main>
-    Forside
+    Om os
 </main>

@@ -19,7 +19,7 @@
     </head>
     
     <body>
-        <header>
+        <header id="header">
             <div class="logo">
                 <a href="index.php">
                     <svg viewBox="0 0 24 24">

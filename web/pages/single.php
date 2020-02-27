@@ -14,9 +14,9 @@
 
 
     <div class="row">
-        <div class="col-1 redBox">
+        <a href="index.php?page=excersize" class="col-1 greenBox">
             <span>Start rute</span>
-        </div>
+        </a>
     </div>
 
 

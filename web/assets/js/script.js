@@ -28,7 +28,7 @@ var toggleMobileNav = debounce(function () {
     var mobileNavLinks = document.getElementById("mobileNavLinks");
 
     if (toggle == false) {
-        document.body.style.overflow = "hidden";
+        document.body.style.overflowY = "hidden";
         mobileNavOverlay.style.display = "block";
 
         setTimeout(function () {
@@ -39,7 +39,7 @@ var toggleMobileNav = debounce(function () {
         mobileNavLinks.style.display = "block";
         toggle = true;
     } else {
-        document.body.style.overflow = "scroll";
+        document.body.style.overflowY = "scroll";
         mobileNavOverlay.style.width = "0";
 
         setTimeout(function () {
@@ -67,9 +67,9 @@ function initMap() {
         map: map
     });
 
-    infoWindow = new google.maps.InfoWindow;
+    var infoWindow = new google.maps.InfoWindow;
 
-    // Try HTML5 geolocation.
+    // Try HTML5 Geolocation
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
 
@@ -89,7 +89,7 @@ function initMap() {
                 content: 'Din placering'
             });
 
-            // Update user position
+            // Update user position every 5 seconds
             setInterval(function () {
                 var newPosition = {
                     lat: position.coords.latitude,

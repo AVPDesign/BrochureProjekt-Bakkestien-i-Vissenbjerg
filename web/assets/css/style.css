@@ -149,6 +149,19 @@ header nav svg:hover{
     height:300px;
     width:100%;
 }
+.greenBox{
+    background: #28a745;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    text-decoration:none;
+    transition:all 250ms;
+}
+.greenBox:hover{
+    background-color: #218838;
+}
 .redBox{
     background: #C8102E;
     color: white;

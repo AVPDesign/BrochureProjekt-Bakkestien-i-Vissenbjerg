@@ -17,6 +17,11 @@ function debounce(func, wait, immediate) {
     };
 };
 
+/* Remove preload class from body */
+function loaded(){
+    document.body.classList.remove("preload");
+}
+
 // Toggle mobile search input
 var toggleMobileSearch = false;
 

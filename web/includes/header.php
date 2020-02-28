@@ -6,8 +6,7 @@
 
         <!-- material design icons -->
         <link rel="stylesheet" href="//cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
-        <!-- font awesome -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" async defer></script>
+
 
         <!-- google maps -->
         <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1k5SC29hxlgaYFAVTeKx9yS7iPNUjUTI&callback=initMap"></script>-->
@@ -15,10 +14,12 @@
 
         <!-- custom -->
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+        <!-- font awesome -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" async defer></script>
         <script src="assets/js/script.js" defer></script>
     </head>
 
-    <body>
+    <body onload="loaded()" class="preload">
         <header id="header">
             <div class="wrapper">
                 <div class="logo">
@@ -39,7 +40,7 @@
                         <a href="index.php?page=contact" class="<?php if($_GET['page'] == "contact"){echo 'activeDesktop';}?>">Kontakt</a>
                     </div>
                     
-                    <div class="flex">
+                    <div class="flex" id="mobileNavContainer">
                         <!-- search -->
                         <div class="flex">
                             <svg style="width:2em;" viewBox="0 0 24 24" onclick="toggleSearch()">

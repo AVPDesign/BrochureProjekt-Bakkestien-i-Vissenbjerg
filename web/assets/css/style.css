@@ -47,6 +47,9 @@ main{
 .m-x{
     margin: auto !important;
 }
+.flex{
+    display:flex;
+}
 .flex-c{
     display:flex;
     justify-content:center;
@@ -100,7 +103,8 @@ main{
 
 /* Header */
 header{
-    background:#C8102E;
+    /*background:#C8102E;*/
+    background:#FFF;
     display:flex;
     justify-content:space-between;
     padding:12px;
@@ -143,10 +147,24 @@ header .logo{
     transition:all 350ms;
     z-index:99;
 }
+#mobileNavFooter{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#FFF;
+}
+#mobileNavFooter img{
+    height:50px;
+    display:block;
+    margin:0 auto;
+    padding:6px 0;
+}
 #mobileNavLinks{
     display:none;
     list-style-type:none;
     padding:2rem;
+    position:relative;
 }
 #mobileNavLinks li{
     padding: 1rem 0;
@@ -160,6 +178,20 @@ header .logo{
     text-decoration:none;
     font-size:1.2em;
     font-weight:700;
+}
+
+/* Search */
+#mobileSearch{
+    /*width: 163px;*/
+    width: 0;
+    opacity:0;
+    border-radius: 5px;
+    border: 2px solid #C8102E;
+    padding:3px;
+    transition:all 350ms;
+}
+#mobileSearch:active, #mobileSearch:focus{
+    outline:none;
 }
 
 /*------- placeholder logo -------*/

@@ -53,6 +53,9 @@ main{
 .m-x{
     margin: auto !important;
 }
+.m-r{
+    margin-right:6px;
+}
 .flex{
     display:flex;
 }
@@ -188,15 +191,37 @@ header .logo{
 
 /* Search */
 #mobileSearch{
-    /*width: 163px;*/
     width: 0;
     opacity:0;
-    border-radius: 5px;
-    border: 2px solid #C8102E;
+    display:none;
+    transition:all 350ms;
+}
+#mobileSearch input[type=text]{
+    /*width: 133px;*/
+    width: 0;
+    opacity:0;
+    border-radius: 5px 0px 0px 5px;
+    border-left: 2px solid #C8102E;
+    border-top: 2px solid #C8102E;
+    border-bottom: 2px solid #C8102E;
+    border-right:0;
     padding:3px;
     transition:all 350ms;
 }
-#mobileSearch:active, #mobileSearch:focus{
+#mobileSearch button{
+    /*width:35px;*/
+    width: 0;
+    opacity:0;
+    background: rgba(200, 16, 46, .2);
+    color:#C8102E;
+    border-top: 2px solid #C8102E;
+    border-right: 2px solid #C8102E;
+    border-bottom: 2px solid #C8102E;
+    border-left:0;
+    border-radius: 0px 5px 5px 0px;
+    transition:all 350ms;
+}
+#mobileSearch input:active, #mobileSearch input:focus, #mobileSearch button:active, #mobileSearch button:focus{
     outline:none;
 }
 

@@ -33,7 +33,6 @@ var toggleSearch = debounce(function () {
     var mobileSearchPath = document.getElementById('mobileSearchPath');
 
     if (toggleMobileSearch == false) {
-
         mobileSearch.style.display = "flex";
 
         setTimeout(function () {
@@ -47,13 +46,12 @@ var toggleSearch = debounce(function () {
             mobileSearchSubmit.style.width = "35px";
 
             mobileSearchPath.setAttribute("d", "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z");
-        }, 1);
+        }, 75);
 
         clearTimeout();
 
         toggleMobileSearch = true;
     } else {
-
         mobileSearch.style.opacity = "0";
         mobileSearch.style.width = "0";
 

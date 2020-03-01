@@ -322,6 +322,7 @@ header nav svg:hover{
 }
 .searchRouteTable th{
     text-align:left;
+    padding:4px 0;
 }
 .searchRouteTable tr{
     border-top:1px solid #C8102E;

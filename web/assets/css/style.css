@@ -291,6 +291,7 @@ header nav svg:hover{
     border-radius:4px;
     border:2px solid #C8102E;
     background:transparent;
+    transition:all 250ms;
 }
 .active-spec-btn{
     background:#C8102E;
@@ -317,8 +318,11 @@ header nav svg:hover{
     font-weight: 100;
     margin: 0px 0px 10px 0px;
 }
+/* Search route table */
 .searchRouteTable{
     width:100%;
+    position:relative;
+    transition:all 250ms;
 }
 .searchRouteTable th{
     text-align:left;
@@ -330,7 +334,14 @@ header nav svg:hover{
 .searchRouteTable td{
     padding:4px 0;
 }
-
+/* Search route map */
+#searchRouteMap{
+    display:none;
+    height:300px;
+    width:100%;
+    position:relative;
+    transition:all 250ms;
+}
 
 /* Single */
 #routeMap{

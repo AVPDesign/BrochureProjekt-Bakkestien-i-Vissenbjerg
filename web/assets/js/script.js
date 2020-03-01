@@ -109,11 +109,13 @@ var toggleMobileNav = debounce(function () {
 
 
 
-//Bakkestien map
-var routeMap;
+//Maps
+var routeMap, searchRouteMap;
 var kmlSrc = 'http://sti.webnation.dk/bakkestien.kml';
 
 function initMap() {
+
+    // Single-route map
     routeMap = new google.maps.Map(document.getElementById('routeMap'));
 
     var kmlLayer = new google.maps.KmlLayer(kmlSrc, {
@@ -168,7 +170,6 @@ function initMap() {
 }
 
 
-
 // Toggle fixed header
 var header = document.getElementById("header");
 
@@ -203,3 +204,29 @@ window.addEventListener('scroll', function () {
 
 // When the user scrolls the page, execute myFunction
 window.addEventListener('scroll', fixHeader);
+
+
+// !!!! Find routes page
+// Show list or map
+var listBtn = document.getElementById('showList');
+var mapBtn = document.getElementById('showMap');
+
+var routesList = document.getElementById('searchRouteTable');
+var routesMap = document.getElementById('searchRouteMap');
+
+function showRoutes(style) {
+    if (style === 1) {
+        routesList.style.display = "inline-table";
+        listBtn.classList.add("active-spec-btn");
+        
+        routesMap.style.display = "none";
+        mapBtn.classList.remove("active-spec-btn");
+        
+    } else {
+        routesMap.style.display = "block";
+        mapBtn.classList.add("active-spec-btn");
+
+        routesList.style.display = "none";
+        listBtn.classList.remove("active-spec-btn");
+    }
+}

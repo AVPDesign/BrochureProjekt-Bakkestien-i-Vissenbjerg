@@ -5,7 +5,7 @@
         </div>
     </div>
 
-
+    <!-- MAP -->
     <div class="row">
         <div class="col-1">
             <div id="routeMap"></div>

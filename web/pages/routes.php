@@ -98,12 +98,12 @@ foreach ($jsonDecoded as $obj) {
     }
 
     // Init map
-    function initMap() {
+    function initialize() {
         searchRouteMap = new google.maps.Map(document.getElementById('searchRouteMap'), searchMapOptions);
         addMarkers();
     }
 
-    google.maps.event.addDomListener(window, 'load', initMap);
+    google.maps.event.addDomListener(window, 'load', initialize);
 
     // Make markers
     var markers = [

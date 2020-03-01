@@ -17,7 +17,7 @@ if(isset($_GET['page'])){
 
         <!-- google maps -->
         <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1k5SC29hxlgaYFAVTeKx9yS7iPNUjUTI&callback=initMap"></script>-->
-        <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
 
         <!-- custom -->
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>

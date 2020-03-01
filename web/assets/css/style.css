@@ -8,6 +8,9 @@ body, html{
     padding:0;
     font-family: Roboto, open-sans;
 }
+input:active, input:focus, button:active, button:focus{
+    outline:0;
+}
 a{
     color:#C8102E;
     text-decoration:none;
@@ -30,29 +33,37 @@ hr{
     background: -webkit-linear-gradient(left, hsla(350, 85%, 42%,0) 0%, hsla(350, 85%, 42%,.75) 50%, hsla(350, 85%, 42%,0) 100%);
 }
 main{
-    padding:0px 12px;
+    
 }
 .wrapper{
     width:100%;
     display: flex;
     justify-content: space-between;
 }
+.no-gutters{
+    padding:0 !important;
+    margin:0 !important;
+}
 .row{
+    box-sizing: border-box;
     width:100%;
-    display:flex;
-    padding:8px 0px;
+    display:block;
+    padding:8px 12px;
 }
 .col-1{
-    width:100%;
+    max-width:100%;
     margin:6px 0;
 }
 .col-2{
-    width:50%;
+    max-width:50%;
     margin:6px 0;
 }
 .col-3{
-    width:33%;
+    max-width:33%;
     margin:6px 0;
+}
+.w-80{
+    width:80%;
 }
 .text-center{
     text-align:center;
@@ -69,11 +80,6 @@ main{
 .flex{
     display:flex;
 }
-.flex-c{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
 .flex-a{
     display:flex;
     justify-content: space-around;
@@ -81,6 +87,15 @@ main{
 .flex-b{
     display:flex;
     justify-content: space-between;
+}
+.flex-c{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.flex-e{
+    display:flex;
+    justify-content:space-evenly;
 }
 .fixed{
     position:sticky;
@@ -187,10 +202,10 @@ header .logo{
 }
 #mobileNavLinks li{
     padding: 1rem 0;
-    border-top: 1px solid #FFF;
+    border-top: 2px solid #FFF;
 }
 #mobileNavLinks li:last-of-type{
-    border-bottom: 1px solid #FFF;
+    border-bottom: 2px solid #FFF;
 }
 #mobileNavLinks a{
     color:white;
@@ -254,7 +269,8 @@ header nav svg:hover{
 }
 /*------- /placeholder logo -------*/
 
-/* Single route */
+
+/* Forside */
 .hero-wrapper{
     width: 100%;
     height: 225px;
@@ -265,7 +281,57 @@ header nav svg:hover{
 }
 
 
-/* Single route */
+/* Hjertestier */
+.spec-btn{
+    padding:3px;
+    font-weight:600;
+    letter-spacing:.05em;
+    width:30%;
+    margin:0 auto;
+    border-radius:4px;
+    border:2px solid #C8102E;
+    background:transparent;
+}
+.active-spec-btn{
+    background:#C8102E;
+    color:white;
+}
+.no-line-height{
+    line-height:1em;
+}
+.searchRoute{
+    background:#C8102E;
+    color:white;
+    padding:12px 0;
+}
+.searchRoute input[type=text]{
+    padding:7px;
+}
+.searchRoute input{
+    padding:4px;
+    border-radius:4px;
+    border:2px solid #C8102E;
+    width: 55%;
+}
+.searchRoute h3{
+    font-weight: 100;
+    margin: 0px 0px 10px 0px;
+}
+.searchRouteTable{
+    width:100%;
+}
+.searchRouteTable th{
+    text-align:left;
+}
+.searchRouteTable tr{
+    border-top:1px solid #C8102E;
+}
+.searchRouteTable td{
+    padding:4px 0;
+}
+
+
+/* Single */
 #routeMap{
     height:300px;
     width:100%;
@@ -290,7 +356,6 @@ header nav svg:hover{
     align-items: center;
     justify-content: center;
     padding: 8px 12px;
-    margin: 0 5px;
     text-decoration:none;
 }
 .redBox svg{
@@ -305,6 +370,7 @@ header nav svg:hover{
 .info-container .icon{
     height:38px;
 }
+
 
 /* Socials */
 .btn-fb{
@@ -323,6 +389,7 @@ header nav svg:hover{
     text-align:center;
     padding:8px 12px;
 }
+
 
 /* Footer */
 footer{

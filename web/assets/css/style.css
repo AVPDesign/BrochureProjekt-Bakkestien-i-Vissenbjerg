@@ -286,6 +286,9 @@ header nav svg:hover{
 
 
 /* Hjertestier */
+.spec-btn:hover{
+    cursor:pointer;
+}
 .spec-btn{
     padding:3px;
     font-weight:600;

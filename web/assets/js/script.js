@@ -37,13 +37,13 @@ var toggleSearch = debounce(function () {
 
         setTimeout(function () {
             mobileSearch.style.opacity = "1";
-            mobileSearch.style.width = "175px";
+            mobileSearch.style.width = "165px";
 
             mobileSearchInput.style.opacity = "1";
-            mobileSearchInput.style.width = "133px";
+            mobileSearchInput.style.width = "77%";
 
             mobileSearchSubmit.style.opacity = "1";
-            mobileSearchSubmit.style.width = "35px";
+            mobileSearchSubmit.style.width = "23%";
 
             mobileSearchPath.setAttribute("d", "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z");
         }, 75);
@@ -110,16 +110,16 @@ var toggleMobileNav = debounce(function () {
 
 
 //Bakkestien map
-var map;
-var kmlSrc = 'https://sti.webnation.dk/bakkestien.kml';
+var routeMap;
+var kmlSrc = 'http://sti.webnation.dk/bakkestien.kml';
 
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'));
+    routeMap = new google.maps.Map(document.getElementById('routeMap'));
 
     var kmlLayer = new google.maps.KmlLayer(kmlSrc, {
         suppressInfoWindows: true,
         preserveViewport: false,
-        map: map
+        map: routeMap
     });
 
     var infoWindow = new google.maps.InfoWindow;
@@ -136,7 +136,7 @@ function initMap() {
 
             var marker = new google.maps.Marker({
                 position: pos,
-                map: map,
+                map: routeMap,
                 title: 'Din placering'
             });
 
@@ -155,15 +155,15 @@ function initMap() {
 
             // Set marker infoWindow content
             marker.addListener('click', function () {
-                infoWindow.open(map, marker);
+                infoWindow.open(routeMap, marker);
             });
 
         }, function () {
-            handleLocationError(true, infoWindow, map.getCenter());
+            handleLocationError(true, infoWindow, routeMap.getCenter());
         });
     } else {
         // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
+        handleLocationError(false, infoWindow, routeMap.getCenter());
     }
 }
 

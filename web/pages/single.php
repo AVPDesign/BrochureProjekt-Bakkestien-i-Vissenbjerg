@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-1">
-            <div id="map"></div>
+            <div id="routeMap"></div>
         </div>
     </div>
 

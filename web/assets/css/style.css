@@ -1,12 +1,16 @@
 /* GLOBAL */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 body, html{
-    font-size:16px;
+    font-size:17px;
 }
 *{
     margin:0;
     padding:0;
     font-family: Roboto, open-sans;
+}
+a{
+    color:#C8102E;
+    text-decoration:none;
 }
 .preload * {
     -webkit-transition: none !important;
@@ -40,21 +44,27 @@ main{
 }
 .col-1{
     width:100%;
-    margin:0px 6px;
+    margin:6px 0;
 }
 .col-2{
     width:50%;
-    margin:0px 6px;
+    margin:6px 0;
 }
 .col-3{
     width:33%;
-    margin:0px 6px;
+    margin:6px 0;
+}
+.text-center{
+    text-align:center;
 }
 .m-x{
     margin: auto !important;
 }
 .m-r{
     margin-right:6px;
+}
+.block{
+    display:block !important;
 }
 .flex{
     display:flex;
@@ -73,7 +83,7 @@ main{
     justify-content: space-between;
 }
 .fixed{
-    position:fixed;
+    position:sticky;
     z-index:999;
 }
 
@@ -200,7 +210,7 @@ header .logo{
     /*width: 133px;*/
     width: 0;
     opacity:0;
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 4px 0px 0px 4px;
     border-left: 2px solid #C8102E;
     border-top: 2px solid #C8102E;
     border-bottom: 2px solid #C8102E;
@@ -214,10 +224,7 @@ header .logo{
     opacity:0;
     background: rgba(200, 16, 46, .2);
     color:#C8102E;
-    border-top: 2px solid #C8102E;
-    border-right: 2px solid #C8102E;
-    border-bottom: 2px solid #C8102E;
-    border-left:0;
+    border: 2px solid #C8102E;
     border-radius: 0px 5px 5px 0px;
     transition:all 350ms;
 }
@@ -247,8 +254,19 @@ header nav svg:hover{
 }
 /*------- /placeholder logo -------*/
 
-/* Home */
-#map{
+/* Single route */
+.hero-wrapper{
+    width: 100%;
+    height: 225px;
+    background-image: url(../img/hf-elderlywalkers.jpg);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* Single route */
+#routeMap{
     height:300px;
     width:100%;
 }
@@ -272,6 +290,7 @@ header nav svg:hover{
     align-items: center;
     justify-content: center;
     padding: 8px 12px;
+    margin: 0 5px;
     text-decoration:none;
 }
 .redBox svg{

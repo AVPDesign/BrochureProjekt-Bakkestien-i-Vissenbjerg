@@ -52,7 +52,7 @@ if(isset($_GET['page'])){
                         } else {
                             echo '';
                         }
-                        ?>">Find hjertesti</a>
+                        ?>">Hjertestier</a>
                         
                         <a href="index.php?page=about" class="<?php
                         if ($page === "about") {
@@ -102,7 +102,7 @@ if(isset($_GET['page'])){
         <div id="mobileNavOverlay">
             <ul id="mobileNavLinks">
                 <li><a href="index.php">Forside</a></li>
-                <li><a href="index.php?page=routes">Find hjertesti</a></li>
+                <li><a href="index.php?page=routes">Hjertestier</a></li>
                 <li><a href="index.php?page=about">Om os</a></li>
                 <li><a href="index.php?page=contact">Kontakt</a></li>
             </ul>

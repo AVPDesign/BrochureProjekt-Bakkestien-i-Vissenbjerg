@@ -1,12 +1,22 @@
 /* GLOBAL */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 body, html{
-    font-size:16px;
+    font-size:17px;
 }
 *{
     margin:0;
     padding:0;
     font-family: Roboto, open-sans;
+}
+ul li, ol li{
+    padding:4px 0;
+}
+input:active, input:focus, button:active, button:focus{
+    outline:0;
+}
+a{
+    color:#C8102E;
+    text-decoration:none;
 }
 .preload * {
     -webkit-transition: none !important;
@@ -26,40 +36,53 @@ hr{
     background: -webkit-linear-gradient(left, hsla(350, 85%, 42%,0) 0%, hsla(350, 85%, 42%,.75) 50%, hsla(350, 85%, 42%,0) 100%);
 }
 main{
-    padding:0px 12px;
+    
 }
 .wrapper{
     width:100%;
     display: flex;
     justify-content: space-between;
 }
+.no-gutters{
+    padding:0 !important;
+    margin:0 !important;
+}
 .row{
+    box-sizing: border-box;
     width:100%;
-    display:flex;
-    padding:8px 0px;
+    display:block;
+    padding:8px 12px;
 }
 .col-1{
-    width:100%;
-    margin:0px 6px;
+    max-width:100%;
+    margin:6px 0;
 }
 .col-2{
-    width:50%;
-    margin:0px 6px;
+    max-width:50%;
+    margin:6px 0;
 }
 .col-3{
-    width:33%;
-    margin:0px 6px;
+    max-width:33%;
+    margin:6px 0;
+}
+.text-center{
+    text-align:center;
 }
 .m-x{
     margin: auto !important;
 }
+.m-r{
+    margin-right:6px;
+}
+.m-l{
+    margin-left: 1.5em;
+    margin-top:8px;
+}
+.block{
+    display:block !important;
+}
 .flex{
     display:flex;
-}
-.flex-c{
-    display:flex;
-    justify-content:center;
-    align-items:center;
 }
 .flex-a{
     display:flex;
@@ -69,8 +92,17 @@ main{
     display:flex;
     justify-content: space-between;
 }
+.flex-c{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.flex-e{
+    display:flex;
+    justify-content:space-evenly;
+}
 .fixed{
-    position:fixed;
+    position:sticky;
     z-index:999;
 }
 
@@ -174,10 +206,10 @@ header .logo{
 }
 #mobileNavLinks li{
     padding: 1rem 0;
-    border-top: 1px solid #FFF;
+    border-top: 2px solid #FFF;
 }
 #mobileNavLinks li:last-of-type{
-    border-bottom: 1px solid #FFF;
+    border-bottom: 2px solid #FFF;
 }
 #mobileNavLinks a{
     color:white;
@@ -188,15 +220,34 @@ header .logo{
 
 /* Search */
 #mobileSearch{
-    /*width: 163px;*/
     width: 0;
     opacity:0;
-    border-radius: 5px;
-    border: 2px solid #C8102E;
+    display:none;
+    transition:all 350ms;
+}
+#mobileSearch input[type=text]{
+    /*width: 133px;*/
+    width: 0;
+    opacity:0;
+    border-radius: 4px 0px 0px 4px;
+    border-left: 2px solid #C8102E;
+    border-top: 2px solid #C8102E;
+    border-bottom: 2px solid #C8102E;
+    border-right:0;
     padding:3px;
     transition:all 350ms;
 }
-#mobileSearch:active, #mobileSearch:focus{
+#mobileSearch button{
+    /*width:35px;*/
+    width: 0;
+    opacity:0;
+    background: rgba(200, 16, 46, .2);
+    color:#C8102E;
+    border: 2px solid #C8102E;
+    border-radius: 0px 5px 5px 0px;
+    transition:all 350ms;
+}
+#mobileSearch input:active, #mobileSearch input:focus, #mobileSearch button:active, #mobileSearch button:focus{
     outline:none;
 }
 
@@ -222,8 +273,85 @@ header nav svg:hover{
 }
 /*------- /placeholder logo -------*/
 
-/* Home */
-#map{
+
+/* Forside */
+.hero-wrapper{
+    width: 100%;
+    height: 225px;
+    background-image: url(../img/hf-elderlywalkers.jpg);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* Hjertestier */
+.spec-btn:hover{
+    cursor:pointer;
+}
+.spec-btn{
+    padding:3px;
+    font-weight:600;
+    letter-spacing:.05em;
+    width:30%;
+    margin:0 auto;
+    border-radius:4px;
+    border:2px solid #C8102E;
+    background:transparent;
+    transition:all 250ms;
+}
+.active-spec-btn{
+    background:#C8102E;
+    color:white;
+}
+.no-line-height{
+    line-height:1em;
+}
+.searchRoute{
+    background:#C8102E;
+    color:white;
+    padding:12px 0;
+}
+.searchRoute input[type=text]{
+    padding:7px;
+}
+.searchRoute input{
+    padding:4px;
+    border-radius:4px;
+    border:2px solid #C8102E;
+    width: 55%;
+}
+.searchRoute h3{
+    font-weight: 100;
+    margin: 0px 0px 10px 0px;
+}
+/* Search route table */
+.searchRouteTable{
+    width:100%;
+    position:relative;
+    transition:all 250ms;
+}
+.searchRouteTable th{
+    text-align:left;
+    padding:4px 0;
+}
+.searchRouteTable tr{
+    border-top:1px solid #C8102E;
+}
+.searchRouteTable td{
+    padding:4px 0;
+}
+/* Search route map */
+#searchRouteMap{
+    display:none;
+    height:300px;
+    width:100%;
+    position:relative;
+    transition:all 250ms;
+}
+
+/* Single */
+#routeMap{
     height:300px;
     width:100%;
 }
@@ -262,6 +390,7 @@ header nav svg:hover{
     height:38px;
 }
 
+
 /* Socials */
 .btn-fb{
     background:#3b5a9b;
@@ -279,6 +408,7 @@ header nav svg:hover{
     text-align:center;
     padding:8px 12px;
 }
+
 
 /* Footer */
 footer{

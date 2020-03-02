@@ -5,10 +5,10 @@
         </div>
     </div>
 
-
+    <!-- MAP -->
     <div class="row">
         <div class="col-1">
-            <div id="map"></div>
+            <div id="routeMap"></div>
         </div>
     </div>
 
@@ -20,7 +20,7 @@
     </div>
 
 
-    <div class="row">
+    <div class="row flex-b">
         <div class="col-2 redBox">
             <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M18,3H6V7H18M19,12A1,1 0 0,1 18,11A1,1 0 0,1 19,10A1,1 0 0,1 20,11A1,1 0 0,1 19,12M16,19H8V14H16M19,8H5A3,3 0 0,0 2,11V17H6V21H18V17H22V11A3,3 0 0,0 19,8Z" /></svg>
             <span>Folder til PRINT</span>
@@ -107,3 +107,64 @@
         </div>
     </div>
 </main>
+<script>
+    //Maps
+var routeMap, searchRouteMap;
+var kmlSrc = 'http://sti.webnation.dk/bakkestien.kml';
+
+(function initMap() {
+
+    // Single-route map
+    routeMap = new google.maps.Map(document.getElementById('routeMap'));
+
+    var kmlLayer = new google.maps.KmlLayer(kmlSrc, {
+        suppressInfoWindows: true,
+        preserveViewport: false,
+        map: routeMap
+    });
+
+    var infoWindow = new google.maps.InfoWindow;
+
+    // Try HTML5 Geolocation
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+
+            // Get user current position
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: routeMap,
+                title: 'Din placering'
+            });
+
+            var infoWindow = new google.maps.InfoWindow({
+                content: 'Din placering'
+            });
+
+            // Update user position every 5 seconds
+            setInterval(function () {
+                var newPosition = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                marker.setPosition(newPosition);
+            }, 5000);
+
+            // Set marker infoWindow content
+            marker.addListener('click', function () {
+                infoWindow.open(routeMap, marker);
+            });
+
+        }, function () {
+            handleLocationError(true, infoWindow, routeMap.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, routeMap.getCenter());
+    }
+})();
+</script>

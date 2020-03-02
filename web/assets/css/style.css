@@ -36,7 +36,7 @@ hr{
     background: -webkit-linear-gradient(left, hsla(350, 85%, 42%,0) 0%, hsla(350, 85%, 42%,.75) 50%, hsla(350, 85%, 42%,0) 100%);
 }
 main{
-    
+
 }
 .wrapper{
     width:100%;
@@ -77,6 +77,10 @@ main{
 .m-l{
     margin-left: 1.5em;
     margin-top:8px;
+}
+.p-0x{
+    padding-top:0 !important;
+    padding-bottom:0 !important;
 }
 .block{
     display:block !important;
@@ -154,11 +158,12 @@ header .logo{
     background:white;
     color:#C8102E;
     border-radius:50%;
+}
+header .logo img{
     height:50px;
-    width:50px;
-
-    /*placeholder logo*/
-    position:relative;
+}
+#halfLogo{
+    display:none;
 }
 /* navigation */
 .activeDesktop{
@@ -326,27 +331,37 @@ header nav svg:hover{
     margin: 0px 0px 10px 0px;
 }
 /* Search route table */
-.searchRouteTable{
+#searchRouteTable{
     width:100%;
-    position:relative;
+    border-collapse: collapse;
     transition:all 250ms;
 }
-.searchRouteTable th{
+#searchRouteTable th, #searchRouteTable td{
     text-align:left;
-    padding:4px 0;
+    padding:8px;
+    border: 1px solid white;
 }
-.searchRouteTable tr{
-    border-top:1px solid #C8102E;
+#searchRouteTable th{
+    background-color: #C8102E;
+    color:white;
 }
-.searchRouteTable td{
-    padding:4px 0;
+#searchRouteTable tr:nth-child(even){
+    background-color: #ffb5b5;
+}
+#searchRouteTable tr:nth-child(odd){
+    background-color: #ffd1d1;
+}
+#searchRouteTable tr:hover {
+    background-color: #ddd;
+}
+#searchRouteTable tr td:last-child{
+    text-align:right;
 }
 /* Search route map */
 #searchRouteMap{
     display:none;
     height:300px;
     width:100%;
-    position:relative;
     transition:all 250ms;
 }
 
@@ -413,4 +428,28 @@ header nav svg:hover{
 /* Footer */
 footer{
     margin-top:15px;
+}
+
+/* SVG logo */
+.logo-img-class-1{
+    fill:#d00a10;
+}
+.logo-img-class-2{
+    fill:#fefefe;
+}
+.logo-text-class-1{
+    fill:#002036;
+}
+.logo-text-class-2{
+    fill:#002136;
+}
+.logo-text-class-3{
+    fill:#012137;
+}
+.logo-text-class-4{
+    fill:#8f9da7;
+}
+
+.blur{
+    filter:blur(1.5rem);
 }

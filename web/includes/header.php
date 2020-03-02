@@ -31,7 +31,8 @@ if(isset($_GET['page'])){
             <div class="wrapper">
                 <div class="logo">
                     <a href="index.php">
-                        <img src="assets/img/logo1.svg" alt="logo"/>
+                        <img src="assets/img/logo1.svg" alt="logo" id="halfLogo"/>
+                        <img src="assets/img/hjerteforeningenLogo1.svg" id="fullLogo" alt="logo"/>
                     </a>
                 </div>
 

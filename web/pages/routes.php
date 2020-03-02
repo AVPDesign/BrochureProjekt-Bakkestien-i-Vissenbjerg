@@ -1,4 +1,7 @@
 <?php
+
+$output = "";
+
 $json = '[{
               "id": "1",
               "name": "Bakkestien",
@@ -26,11 +29,9 @@ $json = '[{
 
 $jsonDecoded = json_decode($json);
 
-$output = "";
-
 foreach ($jsonDecoded as $obj) {
-    $output .= "<tr>
-                    <td><a href='index.php?page=single'>$obj->name</a></td>
+    $output .= "<tr onclick='toSingleRoute()'>
+                    <td>$obj->name</td>
                     <td>$obj->zip</td>
                     <td>$obj->length km</td>
                  </tr>";

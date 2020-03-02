@@ -27,6 +27,9 @@ function loaded() {
 var toggleMobileSearch = false;
 
 var toggleSearch = debounce(function () {
+    var fullLogo = document.getElementById("fullLogo");
+    var halfLogo = document.getElementById("halfLogo");
+
     var mobileSearch = document.getElementById('mobileSearch');
     var mobileSearchInput = document.getElementById('mobileSearchInput');
     var mobileSearchSubmit = document.getElementById('mobileSearchSubmit');
@@ -36,6 +39,9 @@ var toggleSearch = debounce(function () {
         mobileSearch.style.display = "flex";
 
         setTimeout(function () {
+            fullLogo.style.display = "none";
+            halfLogo.style.display = "block";
+
             mobileSearch.style.opacity = "1";
             mobileSearch.style.width = "165px";
 
@@ -52,6 +58,8 @@ var toggleSearch = debounce(function () {
 
         toggleMobileSearch = true;
     } else {
+
+
         mobileSearch.style.opacity = "0";
         mobileSearch.style.width = "0";
 
@@ -64,6 +72,8 @@ var toggleSearch = debounce(function () {
         mobileSearchPath.setAttribute("d", "M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z");
 
         setTimeout(function () {
+            fullLogo.style.display = "block";
+            halfLogo.style.display = "none";
             mobileSearch.style.display = "none";
         }, 350);
 
@@ -156,10 +166,10 @@ function showRoutes(style) {
     if (style === 1) {
         routesList.style.display = "inline-table";
         listBtn.classList.add("active-spec-btn");
-        
+
         routesMap.style.display = "none";
         mapBtn.classList.remove("active-spec-btn");
-        
+
     } else {
         routesMap.style.display = "block";
         mapBtn.classList.add("active-spec-btn");
@@ -167,4 +177,9 @@ function showRoutes(style) {
         routesList.style.display = "none";
         listBtn.classList.remove("active-spec-btn");
     }
+}
+
+// Search route table row link to route on <tr> click
+function toSingleRoute() {
+    location.href = "index.php?page=single";
 }

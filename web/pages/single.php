@@ -5,6 +5,12 @@
         </div>
     </div>
 
+    <div class="row p-0x">
+        <div class="col-1">
+            <a style="text-decoration:underline;" href="index.php?page=routes"><i class="fas fa-arrow-left"></i> Tilbage til oversigt</a>
+        </div>
+    </div>
+
     <!-- MAP -->
     <div class="row">
         <div class="col-1">
@@ -62,30 +68,30 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <div class="row">
         <div class="col-1">
             <hr>
             <p>Ruten går igennem et stærkt kuperet landskab og starter på P-pladsen ved Terrariet. Herfra følges stien forbi det lille grønne område med træskulpturer af ”De Vissenbjerg Røvere” og igennem Vissenbjerg skov, der er udlagt som naturskov, hvilket betyder at almindelig skovdrift er indstillet, og at skoven nu henligger til naturlig udvikling. Stien går igennem Produktionsskolens område og op til landevejen. Ved P-pladsen på den anden side af vejen fortsætter ruten nu imellem afgrunden og lergravene. Her kan du opleve en meget varieret natur og et rigt fugleliv. Du har for eksempel mulighed for at se hulrugende fugle som spætter og mejser, ligesom du i den tætte bevoksning ved ler-gravene kan finde mange forskellige insekter.</p>
-        
+
             <p>Hvis du går igennem det levende hegn, vil du herfra kunne se ned i bunden af afgrunden. På modsatte side af stien, vil du på arealerne med ler-gravene kunne se græssende kvæg. Næste del af ruten går igennem bunden af afgrunden, som er navnet på den største kløft, som smeltevandet skabte, da de tilfrosne søer pludselig blev tømt for vand i slutningen af sidste istid. På den anden side af landevejen kan du holde et lille hvil enten på fiske- og udsigtsplatformen eller på en af bænkene langs søen, inden turen går op igennem skoven og tilbage til P-pladsen. Hele området er fredet og udpeget som nationalt geologisk interesseområde.</p>
-        
+
             <p>Stien går gennem skov, bebyggelse, kuperet terræn og langs sø. Der er toilet og en masse fugleliv på ruten og mulighed for at sidde ned på bænke el.lign. undervejs.</p>
-            
+
             <p>Hjertestien er egnet til både picnic, cykling, løb og barne-/klapvogne.</p>
-            
+
             <p>Det er en fantastisk oplevelse, se foldere ved hjertestiens start.</p>
-            
+
             <p>Stien er lavet i samarbejde med Assens Kommune.</p>
-            
+
             <p>Tak til vores sponsorer.</p>
-            
+
             <p>Har du spørgsmål om hjertestier, aktiviteter eller andet er du velkommen til at kontakte Lokalforeningen <a href="https://assens.hjerteforeningen.dk/" target="_blank">Assens</a>.</p>
         </div>
     </div>
-    
-    
+
+
     <div class="row">
         <div class="col-1">
             <a href="#" class="btn-fb"><i class="fab fa-facebook-f"></i> Del på facebook</a>
@@ -109,62 +115,62 @@
 </main>
 <script>
     //Maps
-var routeMap, searchRouteMap;
-var kmlSrc = 'http://sti.webnation.dk/bakkestien.kml';
+    var routeMap, searchRouteMap;
+    var kmlSrc = 'http://sti.webnation.dk/bakkestien.kml';
 
-(function initMap() {
+    (function initMap() {
 
-    // Single-route map
-    routeMap = new google.maps.Map(document.getElementById('routeMap'));
+        // Single-route map
+        routeMap = new google.maps.Map(document.getElementById('routeMap'));
 
-    var kmlLayer = new google.maps.KmlLayer(kmlSrc, {
-        suppressInfoWindows: true,
-        preserveViewport: false,
-        map: routeMap
-    });
+        var kmlLayer = new google.maps.KmlLayer(kmlSrc, {
+            suppressInfoWindows: true,
+            preserveViewport: false,
+            map: routeMap
+        });
 
-    var infoWindow = new google.maps.InfoWindow;
+        var infoWindow = new google.maps.InfoWindow;
 
-    // Try HTML5 Geolocation
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
+        // Try HTML5 Geolocation
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
 
-            // Get user current position
-            var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-
-            var marker = new google.maps.Marker({
-                position: pos,
-                map: routeMap,
-                title: 'Din placering'
-            });
-
-            var infoWindow = new google.maps.InfoWindow({
-                content: 'Din placering'
-            });
-
-            // Update user position every 5 seconds
-            setInterval(function () {
-                var newPosition = {
+                // Get user current position
+                var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                marker.setPosition(newPosition);
-            }, 5000);
 
-            // Set marker infoWindow content
-            marker.addListener('click', function () {
-                infoWindow.open(routeMap, marker);
+                var marker = new google.maps.Marker({
+                    position: pos,
+                    map: routeMap,
+                    title: 'Din placering'
+                });
+
+                var infoWindow = new google.maps.InfoWindow({
+                    content: 'Din placering'
+                });
+
+                // Update user position every 5 seconds
+                setInterval(function () {
+                    var newPosition = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    marker.setPosition(newPosition);
+                }, 5000);
+
+                // Set marker infoWindow content
+                marker.addListener('click', function () {
+                    infoWindow.open(routeMap, marker);
+                });
+
+            }, function () {
+                handleLocationError(true, infoWindow, routeMap.getCenter());
             });
-
-        }, function () {
-            handleLocationError(true, infoWindow, routeMap.getCenter());
-        });
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, routeMap.getCenter());
-    }
-})();
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, routeMap.getCenter());
+        }
+    })();
 </script>

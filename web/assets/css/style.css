@@ -189,7 +189,7 @@ header .logo img{
 #mobileNavOverlay{
     display:none;
     position:fixed;
-    top:65px;
+    top:64px;
     right:0;
     height:calc(100vh - 65px);
     width:0;

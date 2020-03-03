@@ -95,7 +95,7 @@ var toggleMobileNav = debounce(function () {
 
     if (toggle == false) {
         document.body.style.overflowY = "hidden";
-        mobileNavOverlay.style.display = "block";
+//        mobileNavOverlay.style.display = "block";
 
         setTimeout(function () {
             mobileNavOverlay.style.width = "100%";
@@ -108,9 +108,9 @@ var toggleMobileNav = debounce(function () {
         document.body.style.overflowY = "scroll";
         mobileNavOverlay.style.width = "0";
 
-        setTimeout(function () {
-            mobileNavOverlay.style.display = "none";
-        }, 350);
+//        setTimeout(function () {
+//            mobileNavOverlay.style.display = "none";
+//        }, 350);
 
         mobileNavMenuPath.setAttribute("d", "M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z");
         mobileNavLinks.style.display = "none";

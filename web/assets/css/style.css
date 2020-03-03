@@ -65,6 +65,9 @@ main{
     max-width:33%;
     margin:6px 0;
 }
+.zindex{
+    z-index:999;
+}
 .text-center{
     text-align:center;
 }
@@ -154,6 +157,7 @@ header{
     justify-content:space-between;
     padding:12px;
     width: calc(100% - 24px);
+    height:40px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     transition:all 350ms;
 }
@@ -185,11 +189,11 @@ header .logo img{
 #mobileNavOverlay{
     display:none;
     position:fixed;
-    top:74px;
+    top:65px;
     right:0;
-    height:calc(100vh - 74px);
+    height:calc(100vh - 65px);
     width:0;
-    background:rgba(200, 16, 46, .95);
+    background:rgba(200, 16, 46, .97);
     transition:all 350ms;
     z-index:99;
 }
@@ -225,6 +229,23 @@ header .logo img{
     font-size:1.2em;
     font-weight:700;
 }
+header .logo a{
+    color:#C8102E;
+}
+header .logo svg{
+    position:absolute;
+    height:2.5em;
+}
+header nav{
+    margin:auto 0;
+}
+header nav em{
+    color:white;
+    font-size:2em;
+}
+header nav svg:hover{
+    cursor:pointer;
+}
 
 /* Search */
 #mobileSearch{
@@ -258,28 +279,6 @@ header .logo img{
 #mobileSearch input:active, #mobileSearch input:focus, #mobileSearch button:active, #mobileSearch button:focus{
     outline:none;
 }
-
-/*------- placeholder logo -------*/
-header .logo a{
-    color:#C8102E;
-}
-header .logo svg{
-    position:absolute;
-    top: 5px;
-    left: 5px;
-    height:2.5em;
-}
-header nav{
-    margin:auto 0;
-}
-header nav em{
-    color:white;
-    font-size:2em;
-}
-header nav svg:hover{
-    cursor:pointer;
-}
-/*------- /placeholder logo -------*/
 
 
 /* Forside */
@@ -393,6 +392,7 @@ header nav svg:hover{
     align-items: center;
     justify-content: center;
     padding: 8px 12px;
+    margin:0 4px;
     text-decoration:none;
 }
 .redBox svg{
@@ -452,7 +452,11 @@ footer{
 .logo-text-class-4{
     fill:#8f9da7;
 }
-
-.blur{
-    filter:blur(1.5rem);
+.logoTxt{
+    transition:all 350ms;
+}
+/* blur + opacity */
+svg path.blurred {
+    /*filter: url(#blur);*/
+    opacity:0;
 }

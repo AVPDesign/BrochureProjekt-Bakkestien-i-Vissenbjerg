@@ -1,11 +1,5 @@
-<svg id="Lag_1" data-name="Lag 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1177.71 289">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1177.71 289">
     <defs>
-        <style>
-            svg path.blurred {
-                filter: url(#blur);
-            }
-            .logo-img-class-1{fill:#d00a10;}.logo-text-class-1{fill:#002036;}.logo-text-class-4{fill:#8f9da7;}.logo-text-class-2{fill:#002136;}.logo-text-class-3{fill:#012137;}.logo-img-class-2{fill:#fefefe;}
-        </style>
         <filter id="blur">
             <feGaussianBlur stdDeviation="6" />
         </filter>

@@ -5,6 +5,7 @@ if (isset($_GET['page'])) {
     $page = '';
 }
 ?>
+<!DOCTYPE html>
 <html lang="da">
     <head>
         <title>Danmarks Hjertestier - Hjerteforeningen</title>

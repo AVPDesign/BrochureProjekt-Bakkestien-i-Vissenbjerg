@@ -350,7 +350,9 @@ header nav svg:hover{
     background-color: #ffd1d1;
 }
 #searchRouteTable tr:hover {
-    background-color: #ddd;
+    background-color: rgba(200, 16, 46, .6);
+    color:white;
+    cursor:pointer;
 }
 #searchRouteTable tr td:last-child{
     text-align:right;
@@ -404,6 +406,15 @@ header nav svg:hover{
     height:38px;
 }
 
+/* Excersize page */
+#excMap{
+    height:calc(100vh - 200px);
+    width:100%;
+}
+.excersizeSpecs h1{
+    font-size:1.2em;
+}
+
 
 /* Socials */
 .btn-fb{
@@ -427,6 +438,13 @@ header nav svg:hover{
 /* Footer */
 footer{
     margin-top:15px;
+}
+footer img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    height: 50px;
 }
 
 /* SVG logo */

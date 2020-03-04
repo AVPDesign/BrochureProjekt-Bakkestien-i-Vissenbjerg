@@ -26,6 +26,8 @@ function loaded() {
 var toggleMobileSearch = false;
 
 var toggleSearch = debounce(function () {
+    var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
     var logoTxt = document.querySelectorAll(".logoTxt"), i;
 
     var mobileSearch = document.getElementById('mobileSearch');
@@ -37,9 +39,11 @@ var toggleSearch = debounce(function () {
         mobileSearch.style.display = "flex";
 
         setTimeout(function () {
-            
-            for (i = 0; i < logoTxt.length; ++i) {
-                logoTxt[i].classList.add("blurred");
+
+            if (viewportWidth <= 500) {
+                for (i = 0; i < logoTxt.length; ++i) {
+                    logoTxt[i].classList.add("blurred");
+                }
             }
 
             mobileSearch.style.opacity = "1";
@@ -58,7 +62,7 @@ var toggleSearch = debounce(function () {
 
         toggleMobileSearch = true;
     } else {
-        
+
         for (i = 0; i < logoTxt.length; ++i) {
             logoTxt[i].classList.remove("blurred");
         }

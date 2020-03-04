@@ -66,7 +66,7 @@ foreach ($jsonDecoded as $obj) {
 
 
     <!-- Routes list -->
-    <div class="row" style="overflow-x:auto;">
+    <div class="searchRouteTableRow">
         <table class="searchRouteTable" id="searchRouteTable">
             <thead>
                 <tr>

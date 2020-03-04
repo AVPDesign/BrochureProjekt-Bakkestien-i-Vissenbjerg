@@ -439,6 +439,13 @@ header nav svg:hover{
 footer{
     margin-top:15px;
 }
+footer img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    height: 50px;
+}
 
 /* SVG logo */
 .logo-img-class-1{

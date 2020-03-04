@@ -66,7 +66,7 @@ foreach ($jsonDecoded as $obj) {
 
 
     <!-- Routes list -->
-    <div class="row">
+    <div class="row" style="overflow-x:auto;">
         <table class="searchRouteTable" id="searchRouteTable">
             <thead>
                 <tr>
@@ -99,12 +99,12 @@ foreach ($jsonDecoded as $obj) {
     }
 
     // Init map
-    function initialize() {
+    function initMap() {
         searchRouteMap = new google.maps.Map(document.getElementById('searchRouteMap'), searchMapOptions);
         addMarkers();
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+    google.maps.event.addDomListener(window, 'load', initMap);
 
     // Make markers
     var markers = [

@@ -166,12 +166,6 @@ header .logo{
     color:#C8102E;
     border-radius:50%;
 }
-header .logo img{
-    height:50px;
-}
-#halfLogo{
-    display:none;
-}
 /* navigation */
 .activeDesktop{
     text-decoration:underline !important;

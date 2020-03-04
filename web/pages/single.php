@@ -115,7 +115,7 @@
 </main>
 <script>
     //Maps
-    var routeMap, searchRouteMap;
+    var routeMap;
     var kmlSrc = 'http://sti.webnation.dk/bakkestien.kml';
 
     (function initMap() {

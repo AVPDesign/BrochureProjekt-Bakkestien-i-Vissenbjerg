@@ -66,7 +66,7 @@ foreach ($jsonDecoded as $obj) {
 
 
     <!-- Routes list -->
-    <div class="row" style="overflow-x:auto;">
+    <div class="searchRouteTableRow">
         <table class="searchRouteTable" id="searchRouteTable">
             <thead>
                 <tr>
@@ -91,63 +91,48 @@ foreach ($jsonDecoded as $obj) {
 </main>
 
 <script>
-    //Maps
-    var routeMap;
-    var kmlSrc = 'http://sti.webnation.dk/bakkestien.kml';
+    // Search route map
+    var searchMapOptions = {
+        zoom: 6,
+        center: new google.maps.LatLng(56.157788, 11.057739),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
 
-    (function initMap() {
+    // Init map
+    function initMap() {
+        searchRouteMap = new google.maps.Map(document.getElementById('searchRouteMap'), searchMapOptions);
+        addMarkers();
+    }
 
-        // Single-route map
-        routeMap = new google.maps.Map(document.getElementById('routeMap'));
+    google.maps.event.addDomListener(window, 'load', initMap);
 
-        var kmlLayer = new google.maps.KmlLayer(kmlSrc, {
-            suppressInfoWindows: true,
-            preserveViewport: false,
-            map: routeMap
-        });
+    // Make markers
+    var markers = [
+        {id: 1, name: 'Bakkestien', zip: 'Assens', length: '3,5', lat: 55.391140, lng: 10.116250},
+        {id: 2, name: 'Møllegårdsskovstien', zip: 'Assens', length: '4,5', lat: 55.270630, lng: 9.900540},
+        {id: 3, name: 'Dallund Sø', zip: 'Søndersø', length: '5,5', lat: 55.487289, lng: 10.246400},
+        {id: 4, name: 'Pipstorn Skov', zip: 'Faaborg', length: '3,0', lat: 55.093891, lng: 10.264750}
+    ];
 
-        var infoWindow = new google.maps.InfoWindow;
+    function addMarkers() {
+        for (var i = 0; i < markers.length; i++) {
 
-        // Try HTML5 Geolocation
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
+            var latLng = new google.maps.LatLng(markers[i].lat, markers[i].lng);
 
-                // Get user current position
-                var pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-
-                var marker = new google.maps.Marker({
-                    position: pos,
-                    map: routeMap,
-                    title: 'Din placering'
-                });
-
-                var infoWindow = new google.maps.InfoWindow({
-                    content: 'Din placering'
-                });
-
-                // Update user position every 5 seconds
-                setInterval(function () {
-                    var newPosition = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-                    marker.setPosition(newPosition);
-                }, 5000);
-
-                // Set marker infoWindow content
-                marker.addListener('click', function () {
-                    infoWindow.open(routeMap, marker);
-                });
-
-            }, function () {
-                handleLocationError(true, infoWindow, routeMap.getCenter());
+            markers[i] = new google.maps.Marker({
+                id: markers[i].id,
+                position: latLng,
+                map: searchRouteMap,
+                name: markers[i].name
             });
-        } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, routeMap.getCenter());
+
+            var infowindow = new google.maps.InfoWindow({
+                content: markers[i].name
+            });
+
+            google.maps.event.addListener(markers[i], 'click', function () {
+                window.location.href = "index.php?page=single";
+            });
         }
-    })();
+    }
 </script>

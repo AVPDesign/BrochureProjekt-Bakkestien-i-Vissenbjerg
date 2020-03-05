@@ -2,37 +2,35 @@
     <!-- MAP -->
     <div class="row">
         <div class="col-1">
-            <div id="routeMap"></div>
+            <div id="excMap"></div>
         </div>
     </div>
 
 
-    <div class="row">
-        <a href="index.php?page=excersize" class="col-1 greenBox">
-            <span>Start rute</span>
-        </a>
-    </div>
-
-
-
-    <div class="row">
-        <div class="col-1">Start- & slutsted er på P-pladsen ved terrariet.</div>
+    <div class="row excersizeSpecs">
+        <h1>Bakkestien</h1>
+        <div class="col-1">
+            3 km tilbage (ca. 12 min.)
+        </div>
+        <div class="col-1 redBox">
+            Afbryd rute
+        </div>
     </div>
 </main>
 <script>
     //Maps
-    var routeMap, searchRouteMap;
+    var excMap;
     var kmlSrc = 'http://sti.webnation.dk/bakkestien.kml';
 
     (function initMap() {
 
-        // Single-route map
-        routeMap = new google.maps.Map(document.getElementById('routeMap'));
+        // Excersize map
+        excMap = new google.maps.Map(document.getElementById('excMap'));
 
         var kmlLayer = new google.maps.KmlLayer(kmlSrc, {
             suppressInfoWindows: true,
             preserveViewport: false,
-            map: routeMap
+            map: excMap
         });
 
         var infoWindow = new google.maps.InfoWindow;
@@ -49,7 +47,7 @@
 
                 var marker = new google.maps.Marker({
                     position: pos,
-                    map: routeMap,
+                    map: excMap,
                     title: 'Din placering'
                 });
 
@@ -63,20 +61,23 @@
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     };
+                    excMap.setCenter(newPosition);
+                    excMap.setZoom(16);
                     marker.setPosition(newPosition);
-                }, 5000);
+                }, 2500);
 
                 // Set marker infoWindow content
                 marker.addListener('click', function () {
-                    infoWindow.open(routeMap, marker);
+                    infoWindow.open(excMap, marker);
                 });
 
             }, function () {
-                handleLocationError(true, infoWindow, routeMap.getCenter());
+                handleLocationError(true, infoWindow, excMap.getCenter());
             });
         } else {
             // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, routeMap.getCenter());
+            handleLocationError(false, infoWindow, excMap.getCenter());
         }
     })();
 </script>
+<!--

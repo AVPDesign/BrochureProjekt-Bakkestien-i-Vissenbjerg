@@ -83,14 +83,6 @@ if (isset($_GET['page'])) {
                         }
                         ?>">Hjertestier</a>
 
-                        <a href="index.php?page=about" class="<?php
-                        if ($page === "about") {
-                            echo 'activeDesktop';
-                        } else {
-                            echo '';
-                        }
-                        ?>">Om os</a>
-
                         <a href="index.php?page=contact" class="<?php
                         if ($page === "contact") {
                             echo 'activeDesktop';
@@ -98,6 +90,14 @@ if (isset($_GET['page'])) {
                             echo '';
                         }
                         ?>">Kontakt</a>
+
+                        <a href="index.php?page=login" class="<?php
+                        if ($page === "login") {
+                            echo 'activeDesktop';
+                        } else {
+                            echo '';
+                        }
+                        ?>">Log ind</a>
                     </div>
 
                     <!-- mobile nav -->
@@ -132,8 +132,8 @@ if (isset($_GET['page'])) {
             <ul id="mobileNavLinks">
                 <li><a href="index.php">Forside</a></li>
                 <li><a href="index.php?page=routes">Hjertestier</a></li>
-                <li><a href="index.php?page=about">Om os</a></li>
                 <li><a href="index.php?page=contact">Kontakt</a></li>
+                <li><a href="index.php?page=login">Log ind</a></li>
             </ul>
 
             <div id="mobileNavFooter">

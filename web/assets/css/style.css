@@ -457,7 +457,7 @@ header nav svg:hover{
     border:2px solid #C8102E !important;
 }
 #logInForm input[type=submit]{
-    padding:2px;
+    padding:6px;
     margin-top:6px;
     background:#C8102E;
     color:white;
@@ -472,6 +472,16 @@ header nav svg:hover{
 }
 #logInForm label{
     margin:8px 0;
+}
+.loginHelp{
+    margin-top:.8em;
+    text-align:center;
+}
+.loginHelp a{
+    font-size:.9em;
+}
+.loginHelp p{
+    color:#6c757d;
 }
 
 /* Socials */

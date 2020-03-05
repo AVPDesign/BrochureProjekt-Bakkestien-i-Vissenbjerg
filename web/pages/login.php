@@ -1,6 +1,13 @@
 <main>
     <div class="row">
-        <div class="col-2 m-x">
+        <div class="col-1">
+            <h1>Log ind</h1>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-1 m-x">
             <form id="logInForm">
                 <label for="email">
                     Email
@@ -8,7 +15,7 @@
                 </label>
                 <label for="email">
                     Adgangskode
-                    <input type="email" placeholder="Indtast din adgangskode"/>
+                    <input type="password" placeholder="Indtast din adgangskode"/>
                 </label>
                 
                 <label class="spec-label">
@@ -18,7 +25,12 @@
                 
                 <input type="submit" value="Log ind"/>
             </form>
-            <a href="#" style="font-size:.8em;line-height: 2.5em;">Glemt adgangskode?</a>
+            
+            <div class="loginHelp">
+                <a href="#">Glemt adgangskode?</a>
+                <p>- eller -</p>
+                <a href="#">Bliv medlem</a>
+            </div>
         </div>
     </div>
 </main>

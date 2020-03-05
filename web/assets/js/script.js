@@ -40,7 +40,7 @@ var toggleSearch = debounce(function () {
 
         setTimeout(function () {
 
-            if (viewportWidth <= 500) {
+            if (viewportWidth <= 440) {
                 for (i = 0; i < logoTxt.length; ++i) {
                     logoTxt[i].classList.add("blurred");
                 }

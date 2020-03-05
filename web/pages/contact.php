@@ -2,16 +2,17 @@
     <div class="row">
         <div class="col-1">
             <h1>Kontakt os</h1>
-            <p>Hvad end du er blevet kontaktet på gaden, vil melde dig ind i foreningen eller noget tredje, er vi glade for at høre fra dig på telefon eller mail.</p>
         </div>
     </div>
-    
-    <div class="row">
-        <div class="col-1">
-            Har du brug for at rette i dine oplysninger, tilmelde dig PBS eller andet, <a href="https://hjerteforeningen.dk/selvbetjening/" target="_blank">så kan du med fordel benytte vores selvbetjening.</a>
+
+    <div class="row no-gutters">
+        <div class="col-1 redBox block">
+            <h3>Vi er glade for at høre fra dig</h3>
+            <p>Vi er en del af hjerteforeningen. Besøg 
+                <a href="https://hjerteforeningen.dk/vi-er-glade-for-din-interesse/#hvemervi" target="_blank">hjerteforening.dk</a> for mere information.</p>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="col-1">
             <h3>Sådan kan du kontakte os:</h3>

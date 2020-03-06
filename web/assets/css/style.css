@@ -50,6 +50,9 @@ main{
     padding:0 !important;
     margin:0 !important;
 }
+.p{
+    padding: 8px 12px;
+}
 .row{
     box-sizing: border-box;
     width:100%;
@@ -425,6 +428,17 @@ header nav svg:hover{
     color:white;
     text-decoration:underline;
 }
+.redBtn{
+    padding: 16px 12px;
+    border-radius: 4px;
+    background: #C8102E;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+}
+.redBtn:hover{
+    cursor:pointer;
+}
 .info-container{
     display:flex;
     align-items:center;
@@ -478,7 +492,7 @@ header nav svg:hover{
     text-align:center;
 }
 .loginHelp a{
-    font-size:.9em;
+    font-size:1em;
 }
 .loginHelp p{
     color:#6c757d;

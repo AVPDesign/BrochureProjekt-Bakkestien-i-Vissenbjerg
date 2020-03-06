@@ -188,3 +188,7 @@ function showRoutes(style) {
 function toSingleRoute() {
     location.href = "index.php?page=single";
 }
+// Go to routes.php
+function toRoutes() {
+    location.href = "index.php?page=routes";
+}

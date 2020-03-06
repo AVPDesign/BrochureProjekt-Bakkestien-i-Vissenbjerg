@@ -28,7 +28,7 @@
 
     <div class="row text-center">
         <div class="col-1">
-            <button class="redBtn"><a href="index.php?page=routes">Find hjertestier nær dig</a></button>
+            <button class="redBtn" onclick="toRoutes()">Find hjertestier nær dig</button>
         </div>
     </div>
 

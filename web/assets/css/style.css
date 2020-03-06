@@ -143,8 +143,12 @@ main{
 
 /* MOBILE */
 @media screen and (min-width: 578px) {
+    .hero-row{
+        padding:8px 0 !important;
+    }
     .hero-wrapper{
         background-position: top !important;
+        height:300px !important;
     }
     h1{
         font-size:1.6em;

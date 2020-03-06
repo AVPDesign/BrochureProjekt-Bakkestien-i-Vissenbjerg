@@ -1,5 +1,5 @@
 <main>
-    <div class="row block">
+    <div class="row block hero-row">
         <div class="col-1">
             <h1>Danmarks hjertestier</h1>
         </div>

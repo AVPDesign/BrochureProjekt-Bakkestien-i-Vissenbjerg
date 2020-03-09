@@ -22,12 +22,12 @@ if (isset($_GET['page'])) {
         <!-- font awesome -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" async defer></script>
 
-        <!-- custom js -->
-        <script src="assets/js/script.js" defer></script>
-
         <!-- google maps -->
         <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1k5SC29hxlgaYFAVTeKx9yS7iPNUjUTI&callback=initMap"></script>-->
         <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+        
+        <!-- custom js -->
+        <script src="assets/js/script.js" defer></script>
     </head>
 
     <body onload="loaded()" class="preload">

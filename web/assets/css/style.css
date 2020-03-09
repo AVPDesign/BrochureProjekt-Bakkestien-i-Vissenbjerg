@@ -408,6 +408,7 @@ header nav svg:hover{
 #routeMap{
     height:300px;
     width:100%;
+    border:0;
 }
 .greenBox{
     background: #28a745;
